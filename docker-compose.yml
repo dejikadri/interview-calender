@@ -10,7 +10,7 @@ services:
       - ./app:/app
     command: >
       sh -c "python manage.py runserver 0.0.0.0:8000"
-      environment:
+    environment:
       - DB_HOST=db
       - DB_NAME=appdb
       - DB_USER=postgres
@@ -20,6 +20,8 @@ services:
 
   db:
     image: postgres:10-alpine
+    ports:
+      - "5433:5432"
     environment:
       - POSTGRES_DB=appdb
       - POSTGRES_USER=postgres
