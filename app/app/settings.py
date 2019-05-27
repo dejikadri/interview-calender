@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'interviews',
     'djoser',
     'authuser',
+    'rest_framework_jwt',
 ]
 
 MIDDLEWARE = [
@@ -140,5 +141,5 @@ REST_FRAMEWORK = {
 }
 JWT_AUTH = {
     'JWT_EXPIRATION_DELTA': datetime.timedelta(minutes=30),
-    'JWT_GET_USER_SECRET_KEY': 'kpusers.models.jwt_get_secret_key',
+    'JWT_GET_USER_SECRET_KEY': 'authuser.models.jwt_get_secret_key',
 }
