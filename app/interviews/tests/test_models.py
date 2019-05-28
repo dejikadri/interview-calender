@@ -14,7 +14,8 @@ class CandidateTest(TestCase):
             skype_id='john.smith'
 
         )
+        candidate_john.save()
 
     def test_retrieve_candidate(self):
         get_candidate = Candidate.objects.get(email='jsmith@acme.com')
-        self.assertEqual('jsmith@acme.com', get_candidate)
+        self.assertEqual('john.smith', get_candidate.skype_id)
