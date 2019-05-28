@@ -18,4 +18,5 @@ class InterviewSlot(models.Model):
     interviewer = models.ForeignKey(Interviewer,  on_delete=models.SET_NULL, null=True)
     instruction_notes = models.TextField()
     interview_date = models.DateField()
-    interview_time = models.TimeField()
+    interview_start_time = models.TimeField()
+    interview_end_time = models.TimeField()
