@@ -1,6 +1,6 @@
 from datetime import date, datetime
 from rest_framework import serializers
-from .models import Candidate, Interviewer, InterviewSlot
+from .models import Candidate, Interviewer, InterviewSlot, OtherInterviewers
 
 
 class CandidateSerializer(serializers.ModelSerializer):
@@ -13,6 +13,12 @@ class InterviewerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Interviewer
         fields = ('full_name', 'email')
+
+
+class OtherInterviewersSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = OtherInterviewers
+        fields = ('interviewer', 'interview_slot')
 
 
 class InterviewSlotSerializer(serializers.ModelSerializer):

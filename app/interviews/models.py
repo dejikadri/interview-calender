@@ -14,9 +14,21 @@ class Candidate(models.Model):
 
 
 class InterviewSlot(models.Model):
+    # Both candidate and interviewer are allowed to be null because when either adds a slot
+    # the other field will be null at that time
+
     candidate = models.ForeignKey(Candidate, on_delete=models.SET_NULL, null=True)
     interviewer = models.ForeignKey(Interviewer,  on_delete=models.SET_NULL, null=True)
-    instruction_notes = models.TextField()
+    instruction_notes = models.TextField()  # interview instructions and feedback
     interview_date = models.DateField()
     interview_start_time = models.TimeField()
     interview_end_time = models.TimeField()
+
+
+class OtherInterviewers(models.Model):
+    """
+    Other Interviewers when a candidate can be interviewed by
+    more than one interviewers
+    """
+    interviewer = models.ForeignKey(Interviewer,  on_delete=models.CASCADE)
+    interview_slot = models.ForeignKey(Interviewer,  on_delete=models.CASCADE)

@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'djoser',
     'authuser',
     'rest_framework_jwt',
+
 ]
 
 MIDDLEWARE = [

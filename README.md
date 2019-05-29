@@ -12,8 +12,9 @@ Turn the app, point to the repo `https://github.com/dejikadri/interview-calender
 Make sure you have `docker` and `docker compose`  installed.
 
 
-Navigate to the repo directory and issue the command `docker-compose up`
-A series of messages will scroll up on the screen and after you should see the following output on your screen
+Navigate to the repo directory and issue the command `docker-compose build`
+A series of messages will scroll up on the screen and after thst issue the command `docker-compose up` 
+you should see the following output on your screen
 ``` 
 System check identified no issues (0 silenced).
 May 28, 2019 - 16:32:10

@@ -10,6 +10,8 @@ class InterViewSlotList(APIView):
     """
     Retrieve all interview slots and create new slots
     """
+    permission_classes = [permissions.IsAuthenticated]
+
     def get(self, request):
         slots = InterviewSlot.objects.all()
         serializer = InterviewSlotSerializer(slots, many=True)
