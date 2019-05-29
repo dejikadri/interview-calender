@@ -55,5 +55,45 @@ this will display a json list of interview slots.
 ]
 ```
 
-## Check the documentation for more details
+
+#### Sample Json for POST to Candidate
+```
+{
+    "full_name": "deji",
+    "email": "dj@deji.com",
+    "phone_number": "000-222-444",
+    "skype_id": "ad.dk"
+}
+```
+
+#### Sample PATCH request to update an interview slot to add either a candidate of an interviewer
+ ```
+    {
+        "candidate": 1,
+        "interviewer": null,
+        "instruction_notes": "make it there please",
+        "interview_date": "2019-07-28",
+        "interview_start_time": "17:00",
+        "interview_end_time": "02:00:00"
+    }
+
+```
+
+#### Clashing Interview slot
+```
+    {
+        "candidate": 1,
+        "interviewer": null,
+        "instruction_notes": "make it there please",
+        "interview_date": "2019-07-28",
+        "interview_start_time": "17:00",
+        "interview_end_time": "02:00:00"
+    }
+```
+#### Get the token
+`curl -X POST 127.0.0.1:8000/api/user/login/ --data 'email=x@x.com&password=katana123'`
+
+#### Use the Token Like below. 
+```curl -X GET 127.0.0.1:8000/api/interview/slot/ -H 'Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6InhAeC5jb20iLCJleHAiOjE1NTkxNjU1MTUsImVtYWlsIjoieEB4LmNvbSJ9.yCiaJy2UM0-I75xaWgAJWz2hOPmy_HTsfTziqdrusPg'```
+
 
