@@ -16,6 +16,19 @@ class CandidateTest(TestCase):
         )
         candidate_john.save()
 
+        candidate_hans = Candidate.objects.create(
+        full_name='Hans Guldan',
+        email='hguldan@acme.com',
+        phone_number='+49 701 010 123',
+        skype_id='hans.guldan'
+
+        )
+        candidate_john.save()
+
     def test_retrieve_candidate(self):
         get_candidate = Candidate.objects.get(email='jsmith@acme.com')
         self.assertEqual('john.smith', get_candidate.skype_id)
+
+    def test_get_list_of_candidate(self):
+        candidate_count = Candidate.objects.all()
+        self.assertEqual(2, candidate_count.count())

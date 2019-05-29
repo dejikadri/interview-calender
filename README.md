@@ -23,7 +23,7 @@ Starting development server at http://0.0.0.0:8001/
 Quit the server with CONTROL-C.
 ```
 
-open a browser of use postman to visit the url `http://localhost:8000/api/interview/slot`
+open a browser or use postman to visit the url `http://localhost:8000/api/interview/slot`
 
 this will display a json list of interview slots.
 ``` 
@@ -56,7 +56,7 @@ this will display a json list of interview slots.
 ```
 
 
-#### Sample Json for POST to Candidate
+#### Sample Json to create a new  Candidate (POST)
 ```
 {
     "full_name": "deji",
@@ -79,7 +79,7 @@ this will display a json list of interview slots.
 
 ```
 
-#### Clashing Interview slot
+#### To simulate a Clashing Interview slot
 ```
     {
         "candidate": 1,
