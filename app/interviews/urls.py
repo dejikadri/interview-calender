@@ -1,14 +1,14 @@
 from django.urls import path
-from .views import InterViewSlotList, InterViewSlotDetail, CandidateDetail, InterviewerDetail, \
-    OtherInterviewersDetail
+from .views import InterViewSlotList, InterViewSlotDetail, CandidateList, InterviewerList, \
+    OtherInterviewersList
 
 
 urlpatterns = [
     path('interview/slot/', InterViewSlotList.as_view(), name='interviewslotlist'),
     path('interview/slot/detail/<int:pk>/', InterViewSlotDetail.as_view(), name='interviewslotdetail'),
 
-    path('interview/candidate/', CandidateDetail.as_view(), name='candidatedetail'),
-    path('interview/interviewer/', InterviewerDetail.as_view(), name='interviewerdetail'),
-    path('interview/otherinterviewers/', OtherInterviewersDetail.as_view(),name='otherInterviewersdetail'),
+    path('interview/candidate/', CandidateList.as_view(), name='candidatelist'),
+    path('interview/interviewer/', InterviewerList.as_view(), name='interviewerlist'),
+    path('interview/otherinterviewers/', OtherInterviewersList.as_view(), name='otherInterviewerslist'),
 
 ]

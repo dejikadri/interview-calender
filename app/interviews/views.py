@@ -13,7 +13,7 @@ class InterViewSlotList(APIView):
     """
     Retrieve all interview slots and create new slots
     """
-    permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.IsAuthenticated]
 
     def get(self, request):
         slots = InterviewSlot.objects.all()
@@ -66,7 +66,7 @@ class InterViewSlotDetail(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-class InterviewerDetail(APIView):
+class InterviewerList(APIView):
     def post(self, request):
         serializer = InterviewerSerializer(data=request.data)
         if serializer.is_valid():
@@ -76,7 +76,7 @@ class InterviewerDetail(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-class CandidateDetail(APIView):
+class CandidateList(APIView):
     def post(self, request):
         serializer = CandidateSerializer(data=request.data)
         if serializer.is_valid():
@@ -86,7 +86,7 @@ class CandidateDetail(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-class OtherInterviewersDetail(APIView):
+class OtherInterviewersList(APIView):
     def post(self, request):
         serializer = OtherInterviewersSerializer(data=request.data)
         if serializer.is_valid():
